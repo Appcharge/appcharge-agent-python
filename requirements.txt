@@ -1,0 +1,4 @@
+flask
+pycryptodome
+requests
+gunicorn==20.1.0
