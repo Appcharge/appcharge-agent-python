@@ -11,14 +11,14 @@ import os
 @app.route('/auth', methods=['POST'])
 def authenticate_player():
     auth_request = AuthenticationRequest.from_json(request.data)
-    auth_type = auth_request.auth_type
+    auth_method = auth_request.auth_method
 
     login_result = LoginResponse(False, 0)
 
-    if auth_type == 'facebook':
+    if auth_method == 'facebook':
         login_result = facebook_login(APP_SECRET, auth_request.app_id, auth_request.token)
     else:
-        raise Exception(f'Invalid login type: {auth_type}')
+        raise Exception(f'Invalid login type: {auth_method}')
 
     if login_result.is_valid:
         print(f"Player with id {login_result.user_id} logged in successfully")
