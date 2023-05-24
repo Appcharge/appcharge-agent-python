@@ -27,11 +27,9 @@ from controllers.auth.auth import *
 
 @app.before_request
 def decrypted_body():
-    auth_header = request.headers.get('Authorization', '')
-    if auth_header.startswith('Signature'):
+    if signature_header := request.headers.get('Signature', ''):
         data = request.data
-        signature = auth_header.split('Signature ')[1]
-        if not signature_service.check_signature(data, signature):
+        if not signature_service.check_signature(data, signature_header):
             raise Exception(f'Wrong signature')
         request.data = json.loads(data)
     else:
