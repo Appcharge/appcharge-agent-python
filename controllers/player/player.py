@@ -4,17 +4,17 @@ from flask import request, jsonify
 
 
 class Purchase:
-    def __init__(self, appChargePaymentId, purchaseDateAndTimeUtc, gameId, playerId, authType, bundleName, bundleId, sku, priceInCents, currency, action, actionStatus, products, publisherToken):
+    def __init__(self, appChargePaymentId, purchaseDateAndTimeUtc, gameId, playerId, bundleName, bundleId, sku, priceInCents, currency, priceInDollar, action, actionStatus, products, publisherToken):
         self.appChargePaymentId = appChargePaymentId
         self.purchaseDateAndTimeUtc = purchaseDateAndTimeUtc
         self.gameId = gameId
         self.playerId = playerId
-        self.authType = authType
         self.bundleName = bundleName
         self.bundleId = bundleId
         self.sku = sku
         self.priceInCents = priceInCents
         self.currency = currency
+        self.priceInDollar = priceInDollar
         self.action = action
         self.actionStatus = actionStatus
         self.products = products
