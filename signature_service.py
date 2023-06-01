@@ -1,6 +1,7 @@
 import hmac
 import hashlib
 import json
+import re
 
 
 class SignatureService:
@@ -22,9 +23,12 @@ class SignatureService:
 
     @staticmethod
     def _serialize_signature(signature: str) -> tuple[str, str]:
-        signature_parts = signature.split(",")
-        timestamp = signature_parts[0].replace("t=", "")
-        signature = signature_parts[1].replace("v1=", "")
+        regex = re.compile(r"t=(.*),v1=(.*)")
+        match = regex.match(signature)
+        if not match or len(match.groups()) < 2:
+            raise ValueError("Invalid signature format")
+        timestamp = match.group(1)
+        signature = match.group(2)
         return timestamp, signature
 
     def check_signature(self, payload: bytes, signature: str) -> bool:
