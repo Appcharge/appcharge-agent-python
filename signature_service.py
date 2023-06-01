@@ -15,14 +15,13 @@ class SignatureService:
 
     @staticmethod
     def _serialize_payload(payload: bytes, timestamp: str) -> bytes:
-        serialized_payload = json.loads(payload)
-        serialized_payload = str(serialized_payload)
-        serialized_payload = serialized_payload.replace("\'", "\"").replace(" ", "")
-        serialized_payload = f"{timestamp}.{serialized_payload}"
+        payload_dict = json.loads(payload)
+        payload_string = json.dumps(payload_dict, separators=(',', ':'), ensure_ascii=False)
+        serialized_payload = f"{timestamp}.{payload_string}"
         return serialized_payload.encode("utf8")
 
     @staticmethod
-    def _serialize_signature(signature: str) -> tuple[str, str]:
+    def _parse_signature(signature: str) -> tuple[str, str]:
         regex = re.compile(r"t=(.*),v1=(.*)")
         match = regex.match(signature)
         if not match or len(match.groups()) < 2:
@@ -32,7 +31,7 @@ class SignatureService:
         return timestamp, signature
 
     def check_signature(self, payload: bytes, signature: str) -> bool:
-        timestamp, signature = self._serialize_signature(signature)
+        timestamp, signature = self._parse_signature(signature)
         serialized_payload = self._serialize_payload(payload, timestamp)
         expected_signature = self._get_signature(serialized_payload)
         return expected_signature == signature
