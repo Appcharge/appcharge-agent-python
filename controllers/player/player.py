@@ -4,7 +4,7 @@ from flask import request, jsonify
 
 
 class Purchase:
-    def __init__(self, appChargePaymentId, purchaseDateAndTimeUtc, gameId, playerId, bundleName, bundleId, sku, priceInCents, currency, priceInDollar, action, actionStatus, products, price, subTotal, tax):
+    def __init__(self, appChargePaymentId, purchaseDateAndTimeUtc, gameId, playerId, bundleName, bundleId, sku, priceInCents, currency, priceInDollar, action, actionStatus, products, subTotal, tax):
         self.appChargePaymentId = appChargePaymentId
         self.purchaseDateAndTimeUtc = purchaseDateAndTimeUtc
         self.gameId = gameId
@@ -15,7 +15,6 @@ class Purchase:
         self.priceInCents = priceInCents
         self.currency = currency
         self.priceInDollar = priceInDollar
-        self.price = price
         self.action = action
         self.actionStatus = actionStatus
         self.products = products
