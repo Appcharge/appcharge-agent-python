@@ -8,16 +8,14 @@ from signature_service import SignatureService
 from werkzeug.exceptions import HTTPException
 
 
-iv = os.getenv('IV')
 key = os.getenv('KEY')
 APP_SECRET = os.getenv('APP_SECRET')
 
 # Check IV and KEY exists
-if iv is None or key is None or APP_SECRET is None:
-    print('Missing IV/KEY/APP_SECRET environment variable')
+if key is None or APP_SECRET is None:
+    print('Missing KEY/APP_SECRET environment variable')
     exit()
 
-decryptor = DecryptorService(iv, key)
 signature_service = SignatureService(key)
 app = Flask(__name__)
 
@@ -27,15 +25,11 @@ from controllers.auth.auth import *
 
 @app.before_request
 def decrypted_body():
-    if signature_header := request.headers.get('Signature', ''):
-        data = request.data
-        if not signature_service.check_signature(data, signature_header):
-            raise Exception(f'Wrong signature')
-        request.data = json.loads(data)
-    else:
-        encrypted = bytes(bytearray.fromhex(request.data.decode('ascii')))
-        decrypted = decryptor.decrypt(encrypted)
-        request.data = json.loads(decrypted)
+    signature_header = request.headers.get('signature', '')
+    data = request.data
+    if not signature_service.check_signature(data, signature_header):
+        raise Exception(f'Wrong signature')
+    request.data = json.loads(data)
 
 
 @app.errorhandler(Exception)

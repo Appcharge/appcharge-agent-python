@@ -4,7 +4,7 @@ from flask import request, jsonify
 
 
 class Purchase:
-    def __init__(self, appChargePaymentId, purchaseDateAndTimeUtc, gameId, playerId, bundleName, bundleId, sku, priceInCents, currency, priceInDollar, action, actionStatus, products, publisherToken, price):
+    def __init__(self, appChargePaymentId, purchaseDateAndTimeUtc, gameId, playerId, bundleName, bundleId, sku, priceInCents, currency, priceInDollar, action, actionStatus, products, price, subTotal, tax):
         self.appChargePaymentId = appChargePaymentId
         self.purchaseDateAndTimeUtc = purchaseDateAndTimeUtc
         self.gameId = gameId
@@ -19,7 +19,8 @@ class Purchase:
         self.action = action
         self.actionStatus = actionStatus
         self.products = products
-        self.publisherToken = publisherToken
+        self.tax = tax
+        self.subTotal = subTotal
 
 
 @app.route('/updateBalance', methods=['POST'])
