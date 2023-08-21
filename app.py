@@ -3,7 +3,6 @@ import os
 from flask import Flask, request, jsonify
 from Crypto.Cipher import AES
 from werkzeug.wrappers import Request
-from decryptor_service import DecryptorService
 from signature_service import SignatureService
 from werkzeug.exceptions import HTTPException
 
@@ -36,4 +35,4 @@ def decrypted_body():
 def bad_request(error):
     print('Error:', error)
     print(str(error))
-    return 'Bad Request', 400
+    return f'Bad Request: {str(error)}', 400

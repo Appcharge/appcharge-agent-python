@@ -1,4 +1,6 @@
 flask
 pycryptodome
 requests
+mock
+pytest
 gunicorn==20.1.0
