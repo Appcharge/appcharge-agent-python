@@ -1,16 +1,16 @@
+from datetime import datetime
 import hmac
 import hashlib
 import json
 import re
 
+from config.settings import get_settings
 
 class SignatureService:
-    def __init__(self, key):
-        self.key = key.encode("utf8")
+    key = get_settings().KEY.encode("utf-8")
 
     def _get_signature(self, payload: bytes) -> str:
-        digest = hmac.new(self.key, msg=payload, digestmod=hashlib.sha256).digest()
-        signature = digest.hex()
+        signature = hmac.new(self.key, msg=payload, digestmod=hashlib.sha256).hexdigest()
         return signature
 
     @staticmethod
@@ -35,3 +35,9 @@ class SignatureService:
         serialized_payload = self._serialize_payload(payload, timestamp)
         expected_signature = self._get_signature(serialized_payload)
         return expected_signature == signature
+    
+    def create_signature(self, payload: bytes):
+        timestamp = str(int(datetime.utcnow().timestamp()))
+        serialized_payload = self._serialize_payload(payload, timestamp)
+        expected_signature = self._get_signature(serialized_payload)
+        return f"t={timestamp},v1={expected_signature}"

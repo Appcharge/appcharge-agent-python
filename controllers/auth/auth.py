@@ -7,14 +7,13 @@ from app import APP_SECRET
 import os
 
 
-
 @app.route('/auth', methods=['POST'])
 def authenticate_player():
     auth_request = AuthenticationRequest.from_json(request.data)
     auth_method = auth_request.auth_method
 
     login_result = LoginResponse(False, 0)
-    
+
     if auth_method == 'facebook':
         login_result = facebook_login(APP_SECRET, auth_request.app_id, auth_request.token)
     else:
