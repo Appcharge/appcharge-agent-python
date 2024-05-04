@@ -1,82 +1,123 @@
 {
-  "player": {
-    "status": "valid",
-    "playerProfileImage": "https:///fb.com/fdsfd",
-    "publisherPlayerId": "1234a",
-    "playerName": "player1",
-    "offers": [
-      {
-        "publisherOfferId": "prom_1",
-        "productsSequence": [
-          {
-            "index": 1,
-            "products": [
-              {
-                "publisherProductId": "111",
-                "quantity": 72720000
-              },
-              {
-                "publisherProductId": "Product_1",
-                "quantity": 2000000
+  "version": 2,
+  "status": "valid",
+  "sessionMetadata": "Metadata you need",
+  "offers": [
+    {
+      "publisherOfferId": "promotion_offer_SKU",
+      "productsSequence": [
+        {
+          "index": 1,
+          "playerAvailability": {
+            "total": 99,
+            "remaining": 10
+          },
+          "products": [
+            {
+              "publisherProductId": "111",
+              "quantity": 72720000
+            },
+            {
+              "publisherProductId": "Product_1",
+              "quantity": 2000000
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "publisherOfferId": "bundle_offer_SKU",
+      "offerPlayerAvailability": 5,
+      "productsSequence": [
+        {
+          "index": 1,
+          "products": [
+            {
+              "publisherProductId": "Product_3",
+              "quantity": 875000000,
+              "rarityProductInfo": {
+                "stars": 3,
+                "tooltipText": "test 1",
+                "rarityText": "test rarity"
               }
-            ]
-          }
-        ]
-      },
-      {
-        "publisherOfferId": "bundle_1",
-        "offerPlayerAvailability": 5,
-        "productsSequence": [
-          {
-            "index": 1,
-            "products": [
-              {
-                "publisherProductId": "Product_3",
-                "quantity": 875000000,
-                "rarityProductInfo": {
-                  "stars": 3,
-                  "tooltipText": "test 1",
-                  "rarityText": "test rarity"
-                }
-              },
-              {
-                "publisherProductId": "66754",
-                "quantity": 2,
-                "badgeText": "X2",
-                "rarityProductInfo": {
-                  "stars": 4,
-                  "tooltipText": "smt",
-                  "rarityText": "here rarity minutes"
-                }
-              },
-              {
-                "publisherProductId": "test111",
-                "quantity": 5,
-                "badgeText": "X8",
-                "rarityProductInfo": {
-                  "stars": 3,
-                  "tooltipText": "tooltip text",
-                  "rarityText": "very rare text"
-                }
+            },
+            {
+              "publisherProductId": "66754",
+              "quantity": 2,
+              "badgeText": "X2",
+              "rarityProductInfo": {
+                "stars": 4,
+                "tooltipText": "smt",
+                "rarityText": "here rarity minutes"
               }
-            ]
+            },
+            {
+              "publisherProductId": "test111",
+              "quantity": 5,
+              "badgeText": "X8",
+              "rarityProductInfo": {
+                "stars": 3,
+                "tooltipText": "tooltip text",
+                "rarityText": "very rare text"
+              }
+            }
+          ]
+        }
+      ],
+      "dynamicOfferUi": {
+        "badges": [
+          {
+            "publisherBadgeId": "678"
           }
-        ]
+        ],
+        "salePercentage": 330
       }
-    ],
-    "balances": [
-      {
-        "publisherProductId": "111",
-        "balance": 15
-      },
-      {
-        "publisherProductId": "kkk",
-        "balance": 13
-      }
-    ],
-    "segments": [],
-    "focus": {
-      "publisherBundleId": null
+    },
+    {
+      "publisherOfferId": "popUp_offer_SKU",
+      "productsSequence": [
+        {
+          "index": 1,
+          "products": [
+            {
+              "publisherProductId": "gold",
+              "quantity": 10
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "products": [
+            {
+              "publisherProductId": "gold",
+              "quantity": 20
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "products": [
+            {
+              "publisherProductId": "gold",
+              "quantity": 30
+            }
+          ]
+        }
+      ]
     }
+  ],
+  "balances": [
+    {
+      "publisherProductId": "111",
+      "quantity": 15
+    },
+    {
+      "publisherProductId": "kkk",
+      "quantity": 13
+    }
+  ],
+  "segments": [],
+  "focus": {
+    "publisherBundleId": null
   }
 }

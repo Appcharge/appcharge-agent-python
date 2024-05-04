@@ -1,19 +1,17 @@
 {
   "create": {
-    "publisherOfferId": "Offer_Bundle_3",
-    "name": "TEST",
-    "type": "SpecialOffer",
+    "publisherOfferId": "test17",
+    "name": "Test17",
+    "type": "Bundle",
+    "active": true,
     "intervals": [
       {
-        "startDate": "2023-02-15T15:38:04.095Z",
-        "endDate": "2023-10-19T15:38:04.095Z"
+        "startDate": "2024-05-02T11:56:06.639Z",
+        "endDate": "2124-04-08T11:56:06.639Z"
       }
     ],
-    "offerUiId": "649ac34269796c8d41f3a11a",
-    "active": true,
-    "segments": [
-      "Segment_4"
-    ],
+    "offerUiId": "655755a381ad07ff384adecf",
+    "segments": [],
     "productsSequence": [
       {
         "index": 1,
@@ -22,33 +20,44 @@
             "publisherProductId": "product123",
             "productId": "649ac43369796c8d41f3a40d",
             "quantity": 5
-          }
-        ],
-        "priceInUsdCents": 1999,
-        "playerAvailability": 100
+          }],
+        "priceInUsdCents": 80
       }
     ],
-    "createdBy": "API",
     "dynamicOfferUi": {
-      "badges": []
-    }
+      "badges": [],
+      "salePercentage": 0,
+      "salePercentageDisplayType": "percentage"
+    },
+    "sectionId": null,
+    "createdBy": "API"
   },
   "update": {
-    "publisherOfferId": "bundle_1",
-    "name": "BEST BUNDLE OFFER EVER",
+    "publisherOfferId": "test17",
+    "name": "test17-updated",
     "type": "Bundle",
+    "active": true,
     "intervals": [
       {
-        "startDate": "2023-07-14T11:10:37.763+00:00",
-        "endDate": "2023-10-14T11:10:37.763+00:00"
+        "startDate": "2024-05-02T11:56:06.639Z",
+        "endDate": "2124-04-08T11:56:06.639Z"
       }
     ],
-    "offerUiId": "649ac2e469796c8d41f39f00",
-    "active": true,
-    "segments": [
-      "Segment_1"
+    "offerUiId": "655755a381ad07ff384adecf",
+    "segments": [],
+    "productsSequence": [
+      {
+        "index": 1,
+        "products": [],
+        "priceInUsdCents": 80
+      }
     ],
-    "productsSequence": [],
+    "dynamicOfferUi": {
+      "badges": [],
+      "salePercentage": 0,
+      "salePercentageDisplayType": "percentage"
+    },
+    "sectionId": null,
     "createdBy": "API"
   }
 }

@@ -21,7 +21,5 @@ def sync_info():
 def update_balance():
     PlayerUpdateBalanceRequest.model_validate_json(request.data)
     player_service = PlayerService()
-    signature_service = SignatureService()
-    update_balance_response = player_service.update_balance(request.data,
-                                                            signature_service.create_signature(request.data))
+    update_balance_response = player_service.update_balance(request.data)
     return jsonify(update_balance_response)
