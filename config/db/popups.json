@@ -1,0 +1,130 @@
+{
+    "create": {
+        "publisherOfferId": "Offer_Popup1",
+        "name": "Best PopUp1",
+        "type": "PopUp",
+        "subType": "DailyBonus",
+        "intervals": [
+            {
+                "startDate": "2023-02-15T15:38:04.095Z",
+                "endDate": "2023-10-19T15:38:04.095Z"
+            }
+        ],
+        "offerUiId": "64a4082271335b2498c1ea0d",
+        "active": true,
+        "playerAvailability": 2,
+        "showAfter": "login",
+        "triggers": [
+            {
+                "type": "time",
+                "eventName": "impression",
+                "every": 1440
+            }
+        ],
+        "priority": 1,
+        "startOver": true,
+        "segments": [
+            "Segment_4"
+        ],
+        "productsSequence": [
+            {
+                "index": 1,
+                "products": [
+                    {
+                        "product": {
+                            "publisherProductId": "TestProductExternalId",
+                            "name": "TestProduct",
+                            "textFontColorHex": "cb1010",
+                            "type": "Quantity",
+                            "prefix": "prefix",
+                            "suffix": "suffix",
+                            "priority": "Main",
+                            "images": [
+                                {
+                                    "type": "product",
+                                    "url": "https://media-dev.appcharge.com/media/63e53f149e43bf44513e15c3/asset.png"
+                                }
+                            ],
+                            "createdAt": "2023-07-11T12:43:20.260Z",
+                            "updatedAt": "2023-07-11T12:43:20.260Z",
+                            "productId": "64ad4e683ab2e3f900fd8395"
+                        },
+                        "publisherProductId": "TestProductExternalId",
+                        "quantity": 23
+                    }
+                ],
+                "priceInUsdCents": 3043244324323200,
+                "playerAvailability": 6
+            }
+        ],
+        "dynamicOfferUi": {
+            "salePercentage": 25,
+            "badges": []
+        },
+        "createdBy": "API"
+    },
+    "update": {
+        "publisherOfferId": "Offer_Popup1",
+        "name": "Best updated PopUp1",
+        "type": "PopUp",
+        "subType": "DailyBonus",
+        "intervals": [
+            {
+                "startDate": "2023-02-15T15:38:04.095Z",
+                "endDate": "2023-10-19T15:38:04.095Z"
+            }
+        ],
+        "offerUiId": "64a4082271335b2498c1ea0d",
+        "active": true,
+        "playerAvailability": 2,
+        "showAfter": "login",
+        "triggers": [
+            {
+                "type": "time",
+                "eventName": "impression",
+                "every": 1440
+            }
+        ],
+        "priority": 1,
+        "startOver": true,
+        "segments": [
+            "Segment_4"
+        ],
+        "productsSequence": [
+            {
+                "index": 1,
+                "products": [
+                    {
+                        "product": {
+                            "publisherProductId": "TestProductExternalId",
+                            "name": "TestProduct",
+                            "textFontColorHex": "cb1010",
+                            "type": "Quantity",
+                            "prefix": "prefix",
+                            "suffix": "suffix",
+                            "priority": "Main",
+                            "images": [
+                                {
+                                    "type": "product",
+                                    "url": "https://media-dev.appcharge.com/media/63e53f149e43bf44513e15c3/asset.png"
+                                }
+                            ],
+                            "createdAt": "2023-07-11T12:43:20.260Z",
+                            "updatedAt": "2023-07-11T12:43:20.260Z",
+                            "productId": "64ad4e683ab2e3f900fd8395"
+                        },
+                        "publisherProductId": "TestProductExternalId",
+                        "quantity": 23
+                    }
+                ],
+                "priceInUsdCents": 3043244324323200,
+                "playerAvailability": 6
+            }
+        ],
+        "dynamicOfferUi": {
+            "salePercentage": 25,
+            "badges": []
+        },
+        "createdBy": "API"
+    }
+}

@@ -5,6 +5,7 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=(".env"), case_sensitive=True)
     APP_PORT: int
     OFFERS_FILE_PATH: str
+    POPUPS_FILE_PATH: str
     PLAYER_DATASET_FILE_PATH: str
     PUBLISHER_TOKEN: str
     FACEBOOK_APP_SECRET: str
